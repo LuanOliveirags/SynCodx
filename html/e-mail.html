@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Enviar Email - Luan Gs</title>
+    <link rel="stylesheet" href="../css/email.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Raleway:wght@300&display=swap"
+    rel="stylesheet"
+    />
+</head>
+<body class="scroll">
+    <header class="header">
+        <nav class="navigation">
+          <a href="../index.html" class="logo">
+            <img src="../img/2.0.png" width="62" alt="Logo Luan Gs">
+          </a>
+            <input id="menubar" type="checkbox">
+            <label for="menubar" class="menu-toggle">
+              <span class="menubar"></span>
+              <span class="menubar"></span>
+              <span class="menubar"></span>
+            </label>
+            <ul class="menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><ion-icon name="home-outline"></ion-icon>Home</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><ion-icon name="call-outline"></ion-icon>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <section class="email-section" aria-label="Formulário de contato">
+                <div class="form-container">
+                    <h1>Envie-me uma Mensagem</h1>
+                    <p class="form-subtitle">Como posso ajudá-lo? Preencha o formulário abaixo</p>
+                    
+                    <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome *</label>
+                            <input 
+                                type="text" 
+                                id="name"
+                                name="name" 
+                                placeholder="Digite seu nome completo" 
+                                autocomplete="off" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email"
+                                name="email" 
+                                placeholder="Digite seu email" 
+                                autocomplete="off" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone/WhatsApp *</label>
+                            <input 
+                                type="tel" 
+                                id="telefone"
+                                name="telefone" 
+                                placeholder="(11) 9 4611-4970" 
+                                autocomplete="off" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea 
+                                id="message"
+                                name="message" 
+                                rows="8" 
+                                placeholder="Conte-me mais sobre o seu projeto ou dúvida..." 
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+
+                        <input type="hidden" name="accessKey" value="49c3bb9b-067c-4fea-937b-764588acff4c">
+                        <input type="hidden" name="redirectTo" value="https://luangs.tech/obg-email.html">
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer id="rodape">
+        <img class="perfil" src="../img/2.0.png" width="50" alt="Logo Luan Gs rodapé">
+        <div class="footer-divider"></div>
+        <p>&copy; 2024 Luan Oliveira - Todos os direitos reservados</p>
+    </footer>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.6.3.min.js" 
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
+    crossorigin="anonymous"
+    ></script>
+    <script src="../js/script.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.contact-form');
+        const inputs = form.querySelectorAll('input, textarea');
+        
+        // Validação em tempo real com feedback visual
+        inputs.forEach(input => {
+          // Criar indicador de validação
+          const indicator = document.createElement('span');
+          indicator.className = 'validation-indicator';
+          input.parentNode.appendChild(indicator);
+          
+          // Contador de caracteres para textarea
+          if (input.tagName === 'TEXTAREA') {
+            const counter = document.createElement('div');
+            counter.className = 'char-counter';
+            counter.textContent = `0 / 500 caracteres`;
+            input.parentNode.appendChild(counter);
+            
+            input.addEventListener('input', function() {
+              const length = this.value.length;
+              counter.textContent = `${length} / 500 caracteres`;
+              counter.style.color = length > 450 ? '#ff6b6b' : 'var(--gray)';
+              
+              if (length > 500) {
+                this.value = this.value.substring(0, 500);
+              }
+            });
+          }
+          
+          // Validação ao digitar
+          input.addEventListener('input', function() {
+            validateField(this, indicator);
+          });
+          
+          // Efeito de foco
+          input.addEventListener('focus', function() {
+            this.parentNode.style.transform = 'scale(1.02)';
+            this.style.borderColor = 'var(--primary)';
+            this.style.boxShadow = '0 0 20px rgba(0, 247, 255, 0.3)';
+          });
+          
+          input.addEventListener('blur', function() {
+            this.parentNode.style.transform = 'scale(1)';
+            validateField(this, indicator);
+          });
+        });
+        
+        // Função de validação
+        function validateField(field, indicator) {
+          const value = field.value.trim();
+          let isValid = false;
+          let message = '';
+          
+          if (field.type === 'text' && field.name === 'name') {
+            isValid = value.length >= 3;
+            message = isValid ? '✓ Nome válido' : '✗ Mínimo 3 caracteres';
+          } else if (field.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = emailRegex.test(value);
+            message = isValid ? '✓ Email válido' : '✗ Email inválido';
+          } else if (field.type === 'tel') {
+            const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+            isValid = phoneRegex.test(value) || value.length >= 10;
+            message = isValid ? '✓ Telefone válido' : '✗ Formato: (11) 94611-4970';
+          } else if (field.tagName === 'TEXTAREA') {
+            isValid = value.length >= 10;
+            message = isValid ? '✓ Mensagem válida' : '✗ Mínimo 10 caracteres';
+          }
+          
+          if (value.length > 0) {
+            indicator.textContent = message;
+            indicator.className = isValid ? 'validation-indicator valid' : 'validation-indicator invalid';
+            field.style.borderColor = isValid ? '#4caf50' : '#ff6b6b';
+          } else {
+            indicator.textContent = '';
+            indicator.className = 'validation-indicator';
+            field.style.borderColor = 'rgba(0, 247, 255, 0.3)';
+          }
+          
+          return isValid;
+        }
+        
+        // Validação no envio do formulário
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          let allValid = true;
+          inputs.forEach(input => {
+            const indicator = input.parentNode.querySelector('.validation-indicator');
+            if (!validateField(input, indicator)) {
+              allValid = false;
+              input.style.animation = 'shake 0.5s';
+              setTimeout(() => input.style.animation = '', 500);
+            }
+          });
+          
+          if (allValid) {
+            // Mostrar loading
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Enviando...';
+            submitBtn.style.background = 'var(--gray)';
+            
+            // Criar animação de sucesso
+            setTimeout(() => {
+              submitBtn.innerHTML = '<ion-icon name="checkmark-circle-outline"></ion-icon> Enviado!';
+              submitBtn.style.background = 'linear-gradient(135deg, #4caf50, #45a049)';
+              
+              // Salvar dados no localStorage (para demo)
+              const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                telefone: form.telefone.value,
+                message: form.message.value,
+                timestamp: new Date().toISOString()
+              };
+              
+              let submissions = JSON.parse(localStorage.getItem('form_submissions') || '[]');
+              submissions.push(formData);
+              localStorage.setItem('form_submissions', JSON.stringify(submissions));
+              
+              // Enviar formulário real
+              setTimeout(() => {
+                form.submit();
+              }, 1000);
+            }, 2000);
+          } else {
+            // Mostrar mensagem de erro
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'error-message';
+            errorMsg.textContent = '⚠️ Por favor, preencha todos os campos corretamente';
+            form.insertBefore(errorMsg, form.firstChild);
+            
+            setTimeout(() => errorMsg.remove(), 3000);
+          }
+        });
+        
+        // Autocompletar inteligente (sugestões baseadas em localStorage)
+        const nameInput = form.querySelector('#name');
+        const emailInput = form.querySelector('#email');
+        
+        const savedName = localStorage.getItem('lastUserName');
+        const savedEmail = localStorage.getItem('lastUserEmail');
+        
+        if (savedName) {
+          nameInput.placeholder = `Ex: ${savedName}`;
+        }
+        if (savedEmail) {
+          emailInput.placeholder = `Ex: ${savedEmail}`;
+        }
+        
+        // Salvar dados ao preencher
+        nameInput.addEventListener('blur', function() {
+          if (this.value.trim()) {
+            localStorage.setItem('lastUserName', this.value.trim());
+          }
+        });
+        
+        emailInput.addEventListener('blur', function() {
+          if (this.value.trim()) {
+            localStorage.setItem('lastUserEmail', this.value.trim());
+          }
+        });
+        
+        // Máscara de telefone
+        const phoneInput = form.querySelector('#telefone');
+        phoneInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          
+          if (value.length <= 11) {
+            if (value.length <= 2) {
+              value = value.replace(/^(\d{0,2})/, '($1');
+            } else if (value.length <= 6) {
+              value = value.replace(/^(\d{2})(\d{0,4})/, '($1) $2');
+            } else if (value.length <= 10) {
+              value = value.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else {
+              value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+            }
+          }
+          
+          e.target.value = value;
+        });
+        
+        // Estatísticas de preenchimento
+        let startTime = Date.now();
+        let fieldsFilled = 0;
+        
+        inputs.forEach(input => {
+          input.addEventListener('input', function() {
+            if (this.value.trim() && !this.dataset.counted) {
+              fieldsFilled++;
+              this.dataset.counted = 'true';
+              
+              if (fieldsFilled === inputs.length) {
+                const timeSpent = Math.round((Date.now() - startTime) / 1000);
+                console.log(`Formulário preenchido em ${timeSpent} segundos! 🚀`);
+              }
+            }
+          });
+        });
+      });
+      
+      // Adicionar estilos para validação
+      const style = document.createElement('style');
+      style.textContent = `
+        .validation-indicator {
+          display: block;
+          font-size: 0.85rem;
+          margin-top: 5px;
+          transition: all 0.3s ease;
+          min-height: 20px;
+        }
+        
+        .validation-indicator.valid {
+          color: #4caf50;
+          animation: slideInRight 0.3s ease;
+        }
+        
+        .validation-indicator.invalid {
+          color: #ff6b6b;
+          animation: slideInRight 0.3s ease;
+        }
+        
+        .char-counter {
+          text-align: right;
+          font-size: 0.85rem;
+          color: var(--gray);
+          margin-top: 5px;
+          transition: all 0.3s ease;
+        }
+        
+        .error-message {
+          background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 107, 107, 0.1));
+          border: 2px solid #ff6b6b;
+          border-radius: 10px;
+          padding: 15px;
+          margin-bottom: 20px;
+          color: #ff6b6b;
+          text-align: center;
+          font-weight: bold;
+          animation: slideInDown 0.3s ease;
+        }
+        
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-10px); }
+          75% { transform: translateX(10px); }
+        }
+        
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slideInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .form-group {
+          transition: transform 0.2s ease;
+        }
+        
+        input:focus, textarea:focus {
+          outline: none;
+          border-color: var(--primary) !important;
+          box-shadow: 0 0 20px rgba(0, 247, 255, 0.3) !important;
+        }
+        
+        .submit-btn:disabled {
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

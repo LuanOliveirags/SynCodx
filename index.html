@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- scrollreveal removido: não utilizado -->
+    <title>SynCodx Tech Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+</head>
+
+
+<!-- MENU DE OPÇÕES E LOGO -->
+<body class="scroll">
+        <div id="preloader">
+          <div class="preloader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <h2>SynCodx</h2>
+            <h5>Carregando...</h5>
+          </div>
+        </div>
+    <!-- Preloader removido para site institucional mais limpo -->
+
+    <header class="header header-fixa">
+      <nav class="navigation">
+          <a href="index.html" class="logo logo-prof">
+              <img src="img/2.0.png" width="100" alt="Logo SynCodx" id="logo-img">
+          </a>
+          <input type="checkbox" id="menubar">
+          <label for="menubar" class="menu-toggle" aria-label="Abrir menu">
+            <span class="menubar"></span>
+            <span class="menubar"></span>
+            <span class="menubar"></span>
+          </label>
+          <ul class="menu">
+                <li class="nav-item"><a href="#sobre" class="nav-link"></ion-icon>Sobre</a></li>
+                <li class="nav-item"><a href="#atuacao" class="nav-link"></ion-icon>Áreas de Atuação</a></li>
+                <li class="nav-item"><a href="html/missao-visao-valores.html" class="nav-link"></ion-icon>Valores</a></li>
+                <li class="nav-item"><a href="#contato" class="nav-link"></ion-icon>Contato</a></li>
+          </ul>
+      </nav>
+    </header>
+
+
+    <div class="wrapper">
+        <main>
+
+      <!-- HERO INSTITUCIONAL -->
+      <section class="module parallax parallax-1 hero-prof" aria-label="Seção principal de apresentação" id="sobre">
+        <div class="hero-bg-efeito"></div>
+        <h1 class="hero-titulo">SynCodx Tech Solutions</h1>
+        <h4 class="hero-sub">Inteligência em cada conexão</h4>
+        <div class="hero-impacto">
+          <p>A SynCodx Tech Solutions Ltda é especialista em soluções inteligentes, seguras e eficientes para integração de sistemas, infraestrutura de TI, dados e serviços digitais. <span class="hero-destaque">Tecnologia de verdade, resultado de verdade.</span></p>
+          <a href="#contato" class="cta-btn">Fale com a SynCodx</a>
+        </div>
+      </section>
+
+    <!-- MISSÃO, VISÃO, VALORES agora em página separada -->
+      <!-- ÁREAS DE ATUAÇÃO -->
+      <section class="conteudo1 atuacao-prof" aria-label="Áreas de Atuação" id="atuacao">
+        <h2 class="atuacao-titulo">Áreas de Atuação</h2>
+        <div class="skills-container skills-grid">
+          <article class="skill-card card-prof">
+            <div class="skill-icon"><ion-icon name="server-outline"></ion-icon></div>
+            <h3>Tecnologia da Informação</h3>
+            <p class="skill-desc">Infraestrutura, suporte técnico e gestão de ambientes digitais.</p>
+          </article>
+          <article class="skill-card card-prof">
+            <div class="skill-icon"><ion-icon name="git-merge-outline"></ion-icon></div>
+            <h3>Sistemas e Integração</h3>
+            <p class="skill-desc">Integração de soluções, automação e conectividade entre plataformas.</p>
+          </article>
+          <article class="skill-card card-prof">
+            <div class="skill-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+            <h3>Cybersecurity</h3>
+            <p class="skill-desc">Proteção de dados, segurança da informação e compliance.</p>
+          </article>
+          <article class="skill-card card-prof">
+            <div class="skill-icon"><ion-icon name="analytics-outline"></ion-icon></div>
+            <h3>Análise de Dados</h3>
+            <p class="skill-desc">Soluções digitais, BI e inteligência de dados para decisões estratégicas.</p>
+          </article>
+          <article class="skill-card card-prof">
+            <div class="skill-icon"><ion-icon name="bulb-outline"></ion-icon></div>
+            <h3>Consultoria em Tecnologia</h3>
+            <p class="skill-desc">Consultoria, inovação e transformação digital para empresas.</p>
+          </article>
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- CONTATO E ASSINATURA INSTITUCIONAL -->
+      <section class="conteudo contato-prof" aria-label="Contato e assinatura institucional" id="contato">
+        <div class="motivation-box box-glass">
+          <p class="motivation-text">Empresas, profissionais e organizações que buscam soluções tecnológicas confiáveis, seguras e eficientes para otimizar processos, sistemas e infraestrutura digital encontram na <span class="hero-destaque">SynCodx Tech</span> um parceiro de confiança.</p>
+          <form class="contact-form" style="margin: 0 auto 28px auto; max-width: 400px;">
+            <div class="form-group">
+              <label for="email" class="form-label"><ion-icon name="mail-outline"></ion-icon> E-mail</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="Seu e-mail">
+            </div>
+            <div class="form-group">
+              <label for="mensagem" class="form-label"><ion-icon name="chatbubble-ellipses-outline"></ion-icon> Mensagem</label>
+              <textarea id="mensagem" name="mensagem" class="form-input" rows="4" required placeholder="Digite sua mensagem"></textarea>
+            </div>
+            <button type="submit" class="cta-btn form-btn">Enviar <ion-icon name="send-outline"></ion-icon></button>
+            <div id="form-feedback" style="display:none;margin-top:12px;font-size:1.05rem;"></div>
+          </form>
+          <div class="social-links social-glass">
+            <a href="mailto:contato@syncodx.com.br" class="social-btn gmail" title="Envie um email" aria-label="E-mail institucional">
+              <ion-icon name="mail"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/company/syncodx" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn" aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" title="WhatsApp institucional" aria-label="WhatsApp">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </div>
+          <div class="assinatura-prof">
+            <span>SynCodx Tech — inteligência em cada conexão.</span>
+          </div>
+        </div>
+      </section>
+      
+
+        </main>
+        
+    </div>
+
+    
+    <footer id="rodape" class="rodape-prof">
+      <img class="perfil" src="img/2.0.1.png" width="60" alt="Logo SynCodx rodapé">
+      <div class="footer-divider divider-anim"></div>
+      <h1 class="footer-titulo">SynCodx Tech Solutions Ltda</h1>
+      <p class="footer-info">CNPJ: 00.000.000/0001-00 &nbsp;|&nbsp; contato@syncodx.com.br</p>
+      <p class="footer-copy">&copy; 2026 SynCodx Tech Solutions Ltda — Todos os direitos reservados</p>
+    </footer>
+    
+    <!-- FINAL DO RODA-PÉ -->
+    
+    <!-- Importação dos scripts centralizados -->
+    <script src="js/script-index.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

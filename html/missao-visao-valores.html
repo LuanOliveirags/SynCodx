@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão, Visão e Valores | SynCodx Tech</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <a href="../index.html" class="logo" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.3rem;letter-spacing:2.5px;">
+                <img src="../img/2.0.png" width="78" alt="Logo SynCodx" style="margin-right:18px;vertical-align:middle;">
+            </a>
+            <ul class="menu">
+                <li class="nav-item"><a href="../index.html#sobre" class="nav-link"><ion-icon name="business-outline"></ion-icon>Sobre</a></li>
+                <li class="nav-item"><a href="../index.html#atuacao" class="nav-link"><ion-icon name="layers-outline"></ion-icon>Áreas de Atuação</a></li>
+                <li class="nav-item"><a href="missao-visao-valores.html" class="nav-link"><ion-icon name="star-outline"></ion-icon>Valores</a></li>
+                <li class="nav-item"><a href="../index.html#contato" class="nav-link"><ion-icon name="call-outline"></ion-icon>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="valores-hero" aria-label="Missão, Visão e Valores" id="valores">
+            <div class="valores-impacto">
+                <br>
+                <br>
+                <br>
+                <ion-icon name="sparkles-outline" style="font-size:2.5rem;color:var(--primary);"></ion-icon>
+                <h2 class="valores-titulo">Transformando tecnologia em valor para pessoas e negócios</h2>
+            </div>
+            <div class="valores-cards-container">
+                <div class="valores-card">
+                    <ion-icon name="bulb-outline" class="valores-icon"></ion-icon>
+                    <h3>Missão</h3>
+                    <p>Fornecer soluções tecnológicas inteligentes que conectem sistemas, dados e pessoas, promovendo eficiência, segurança e crescimento sustentável para nossos clientes.</p>
+                </div>
+                <div class="valores-card">
+                    <ion-icon name="eye-outline" class="valores-icon"></ion-icon>
+                    <h3>Visão</h3>
+                    <p>Ser referência em soluções tecnológicas e inovação, reconhecida pela qualidade, confiança e capacidade de transformar desafios em soluções eficientes.</p>
+                </div>
+                <div class="valores-card valores-lista">
+                    <ion-icon name="star-outline" class="valores-icon"></ion-icon>
+                    <h3>Valores</h3>
+                    <ul>
+                        <li><ion-icon name="trending-up-outline"></ion-icon> Inovação contínua</li>
+                        <li><ion-icon name="shield-checkmark-outline"></ion-icon> Ética e transparência</li>
+                        <li><ion-icon name="construct-outline"></ion-icon> Qualidade técnica</li>
+                        <li><ion-icon name="lock-closed-outline"></ion-icon> Segurança da informação</li>
+                        <li><ion-icon name="trophy-outline"></ion-icon> Compromisso com resultados</li>
+                        <li><ion-icon name="people-outline"></ion-icon> Foco no cliente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </style>
+    <style>
+    .valores-hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 60px 0 40px 0;
+        background: linear-gradient(135deg, #0a192f 80%, var(--primary) 100%);
+    }
+    .valores-impacto {
+        text-align: center;
+        margin-bottom: 48px;
+        animation: fadeInScale 1.1s;
+    }
+    .valores-titulo {
+        color: var(--primary);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 900;
+        margin-top: 12px;
+        margin-bottom: 0;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+    }
+    .valores-titulo::after {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), #00f7ff);
+        margin: 12px auto 0 auto;
+        border-radius: 2px;
+        animation: slideInUp 1.2s;
+    }
+    .valores-cards-container {
+        display: flex;
+        gap: 38px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .valores-card {
+        background: rgba(0, 247, 255, 0.07);
+        border-radius: 22px;
+        box-shadow: 0 8px 32px rgba(0,247,255,0.10);
+        border: 2.5px solid var(--primary);
+        padding: 38px 28px 32px 28px;
+        min-width: 260px;
+        max-width: 340px;
+        text-align: center;
+        color: #e0f7fa;
+        transition: transform 0.35s, box-shadow 0.35s, border 0.35s;
+        animation: fadeInScale 1.1s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+    .valores-card:hover {
+        transform: translateY(-12px) scale(1.04) rotate(-1deg);
+        box-shadow: 0 12px 40px var(--primary);
+        border-color: #00f7ff;
+    }
+    .valores-icon {
+        font-size: 2.7rem;
+        margin-bottom: 12px;
+        color: var(--primary);
+        transition: color 0.3s, transform 0.3s;
+        animation: breathe 3.2s infinite;
+    }
+    .valores-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-bottom: 18px;
+        margin-top: 0;
+        letter-spacing: 1px;
+    }
+    .valores-card p {
+        font-size: 1.08rem;
+        color: #e0f7fa;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    .valores-lista ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+    .valores-lista li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.08rem;
+        color: #e0f7fa;
+        margin-bottom: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+    .valores-lista li ion-icon {
+        font-size: 1.3rem;
+        color: var(--primary);
+    }
+    @media (max-width: 900px) {
+        .valores-cards-container {
+            gap: 18px;
+        }
+        .valores-card {
+            min-width: 220px;
+            max-width: 98vw;
+            padding: 22px 10px 18px 10px;
+        }
+        .valores-titulo {
+            font-size: 1.3rem;
+        }
+    }
+    @media (max-width: 600px) {
+        .valores-hero {
+            padding: 30px 0 10px 0;
+        }
+        .valores-cards-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .valores-card {
+            min-width: 96vw;
+            max-width: 99vw;
+            padding: 12px 2vw 10px 2vw;
+            border-radius: 10px;
+        }
+        .valores-icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+        .valores-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .valores-card p, .valores-lista li {
+            font-size: 0.95rem;
+        }
+    }
+    </style>
+    </main>
+    <footer id="rodape">
+        <img class="perfil" src="../img/2.0.png" width="50" alt="Logo SynCodx rodapé">
+        <div class="footer-divider"></div>
+        <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1px;">SynCodx Tech Solutions Ltda</h1>
+        <p style="color:#e0f7fa;font-size:1.05rem;">CNPJ: 00.000.000/0001-00 &nbsp;|&nbsp; contato@syncodx.com.br</p>
+        <p style="color:#adadad;font-size:0.95rem;">&copy; 2026 SynCodx Tech Solutions Ltda — Todos os direitos reservados</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
