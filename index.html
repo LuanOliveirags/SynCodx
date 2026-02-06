@@ -1,155 +1,564 @@
 <!DOCTYPE html>
+<!--
+    ETAPA 1 · Estrutura base do documento HTML responsável por renderizar toda a landing page.
+    Mantém apenas um ponto de entrada e referencia diretamente os arquivos essenciais do projeto.
+-->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- scrollreveal removido: não utilizado -->
-    <title>SynCodx Tech Solutions</title>
+    <title>Luan Gs - Analista de Sistemas</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/1-responsive.css">
+    <link rel="stylesheet" href="css/2-preloader.css">
+    <link rel="stylesheet" href="css/sec_generic.css">
+    <link rel="stylesheet" href="css/3-header_hero.css">
+    <link rel="stylesheet" href="css/4-rodape.css">
+    <link rel="stylesheet" href="css/5-comofunciona.css">
+    <link rel="stylesheet" href="css/6-consultoria.css">
+    <link rel="stylesheet" href="css/7-diferenciais.css">
+    <link rel="stylesheet" href="css/8-faq.css">
+    <link rel="stylesheet" href="css/9-feedback.css">
+    <link rel="stylesheet" href="css/10-menu.css">
+    <link rel="stylesheet" href="css/11-modal_img.css">
+    <link rel="stylesheet" href="css/12-planos.css">
+    <link rel="stylesheet" href="css/13-resultados.css">
+    <link rel="stylesheet" href="css/14-simetria.css">
+    <link rel="stylesheet" href="css/15-sobre.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Raleway:wght@300&display=swap" rel="stylesheet"/>
+    <!-- Fonte principal e folha de estilos -->
 </head>
 
+<body>
+       <!--
+      Etapa 1.1: Preloader
+      Exibe animação de carregamento enquanto a página é processada
+    -->
 
-<!-- MENU DE OPÇÕES E LOGO -->
-<body class="scroll">
-        <div id="preloader">
-          <div class="preloader-content">
-            <div class="loader-ring"></div>
-            <div class="loader-ring"></div>
-            <div class="loader-ring"></div>
-            <h2>SynCodx</h2>
-            <h5>Carregando...</h5>
-          </div>
+        <!--
+            Preloader inspirado no logo neon
+        -->
+        <div id="preloader" aria-label="Carregando página" role="status">
+            <div class="preloader-circles">
+                <div class="preloader-circle pink"></div>
+                <div class="preloader-circle glow"></div>
+                <div class="preloader-circle white"></div>
+            </div>
+            
+            <div class="preloader-content">
+            <br>
+            <br>
+            <br>
+            <br>
+                <div class="preloader-title">Thiago Bazillio</div>
+                <div class="preloader-subtitle">CONSULTORIA ONLINE</div>
+            </div>
         </div>
-    <!-- Preloader removido para site institucional mais limpo -->
 
-    <header class="header header-fixa">
-      <nav class="navigation">
-          <a href="index.html" class="logo logo-prof">
-              <img src="img/1.0.1.png" width="100" alt="Logo SynCodx" id="logo-img">
-          </a>
-          <input type="checkbox" id="menubar">
-          <label for="menubar" class="menu-toggle" aria-label="Abrir menu">
-            <span class="menubar"></span>
-            <span class="menubar"></span>
-            <span class="menubar"></span>
-          </label>
-          <ul class="menu">
-                <li class="nav-item"><a href="#sobre" class="nav-link"></ion-icon>Sobre</a></li>
-                <li class="nav-item"><a href="#atuacao" class="nav-link"></ion-icon>Áreas de Atuação</a></li>
-                <li class="nav-item"><a href="html/missao-visao-valores.html" class="nav-link"></ion-icon>Valores</a></li>
-                <li class="nav-item"><a href="#contato" class="nav-link"></ion-icon>Contato</a></li>
-          </ul>
-      </nav>
+    <!-- ETAPA 2 · Cabeçalho fixo com navegação -->
+    <header class="header">
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="#inicio" class="logo" aria-label="Ir para o início do site"></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="navMenu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <div class="menu-brand">
+                    <h2 class="menu-brand-name">THIAGO BAZILLIO</h2>
+                    <p class="menu-brand-subtitle">TREINADOR</p>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#para-quem-e">Para quem é</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#info-simetria">Simetria</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#planos">Consultoria</a></li>
+                    <li><a href="#resultados">Resultados</a></li>
+                    <li><a href="#feedbacks">Feedbacks</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="menu-overlay" id="menuOverlay"></div>
     </header>
 
-
-    <div class="wrapper">
-        <main>
-
-      <!-- HERO INSTITUCIONAL -->
-      <section class="module parallax parallax-1 hero-prof" aria-label="Seção principal de apresentação" id="sobre">
-        <div class="hero-bg-efeito"></div>
-        <h1 class="hero-titulo">SynCodx Tech Solutions</h1>
-        <h4 class="hero-sub">Inteligência em cada conexão</h4>
-        <div class="hero-impacto">
-          <p>A SynCodx Tech Solutions Ltda é especialista em soluções inteligentes, seguras e eficientes para integração de sistemas, infraestrutura de TI, dados e serviços digitais. <span class="hero-destaque">Tecnologia de verdade, resultado de verdade.</span></p>
-          <a href="#contato" class="cta-btn">Fale com a SynCodx</a>
-        </div>
-      </section>
-
-    <!-- MISSÃO, VISÃO, VALORES agora em página separada -->
-      <!-- ÁREAS DE ATUAÇÃO -->
-      <section class="conteudo1 atuacao-prof" aria-label="Áreas de Atuação" id="atuacao">
-        <h2 class="atuacao-titulo">Áreas de Atuação</h2>
-        <div class="skills-container skills-grid">
-          <article class="skill-card card-prof">
-            <div class="skill-icon"><ion-icon name="server-outline"></ion-icon></div>
-            <h3>Tecnologia da Informação</h3>
-            <p class="skill-desc">Infraestrutura, suporte técnico e gestão de ambientes digitais.</p>
-          </article>
-          <article class="skill-card card-prof">
-            <div class="skill-icon"><ion-icon name="git-merge-outline"></ion-icon></div>
-            <h3>Sistemas e Integração</h3>
-            <p class="skill-desc">Integração de soluções, automação e conectividade entre plataformas.</p>
-          </article>
-          <article class="skill-card card-prof">
-            <div class="skill-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
-            <h3>Cybersecurity</h3>
-            <p class="skill-desc">Proteção de dados, segurança da informação e compliance.</p>
-          </article>
-          <article class="skill-card card-prof">
-            <div class="skill-icon"><ion-icon name="analytics-outline"></ion-icon></div>
-            <h3>Análise de Dados</h3>
-            <p class="skill-desc">Soluções digitais, BI e inteligência de dados para decisões estratégicas.</p>
-          </article>
-          <article class="skill-card card-prof">
-            <div class="skill-icon"><ion-icon name="bulb-outline"></ion-icon></div>
-            <h3>Consultoria em Tecnologia</h3>
-            <p class="skill-desc">Consultoria, inovação e transformação digital para empresas.</p>
-          </article>
-        </div>
-      </section>
-
-
-
-
-
-
-      <!-- CONTATO E ASSINATURA INSTITUCIONAL -->
-      <section class="conteudo contato-prof" aria-label="Contato e assinatura institucional" id="contato">
-        <div class="motivation-box box-glass">
-          <p class="motivation-text">Empresas, profissionais e organizações que buscam soluções tecnológicas confiáveis, seguras e eficientes para otimizar processos, sistemas e infraestrutura digital encontram na <span class="hero-destaque">SynCodx Tech</span> um parceiro de confiança.</p>
-          <form class="contact-form" style="margin: 0 auto 28px auto; max-width: 400px;">
-            <div class="form-group">
-              <label for="email" class="form-label"><ion-icon name="mail-outline"></ion-icon> E-mail</label>
-              <input type="email" id="email" name="email" class="form-input" required placeholder="Seu e-mail">
+    <!--
+      Etapa 1.3: Seção principal (Hero)
+      Destaque inicial com nome e subtítulo
+    -->
+    <section class="hero-section" id="inicio" aria-label="Início">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-thiago">
+            <div class="hero-content">
+                <!---
+                <h1 class="brand-name">Thiago Bazillio</h1>
+                <div class="brand-subtitle">Consultoria Online</div>
+            -->
             </div>
-            <div class="form-group">
-              <label for="mensagem" class="form-label"><ion-icon name="chatbubble-ellipses-outline"></ion-icon> Mensagem</label>
-              <textarea id="mensagem" name="mensagem" class="form-input" rows="4" required placeholder="Digite sua mensagem"></textarea>
-            </div>
-            <button type="submit" class="cta-btn form-btn">Enviar <ion-icon name="send-outline"></ion-icon></button>
-            <div id="form-feedback" style="display:none;margin-top:12px;font-size:1.05rem;"></div>
-          </form>
-          <div class="social-links social-glass">
-            <a href="mailto:contato@syncodx.com.br" class="social-btn gmail" title="Envie um email" aria-label="E-mail institucional">
-              <ion-icon name="mail"></ion-icon>
-            </a>
-            <a href="https://www.linkedin.com/company/syncodx" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn" aria-label="LinkedIn">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" title="WhatsApp institucional" aria-label="WhatsApp">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-            </a>
-          </div>
-          <div class="assinatura-prof">
-            <span>SynCodx Tech — inteligência em cada conexão.</span>
-          </div>
         </div>
-      </section>
-      
+        <!-- Logo centralizado na parte inferior da hero -->
+        <div class="hero-logo-area">
+            <img src="img/logo.png" alt="Thiago Bazillio" class="hero-logo-img">
+        </div>
+        <!-- Seta centralizada para rolar para baixo -->
+        <div class="hero-scroll-arrow center">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+        </div>
+    </section>
+   
 
-        </main>
-        
-    </div>
+ <!--
+      Etapa 1.4: Seção "Para quem é"
+      Explica o público-alvo da consultoria
+    -->
+    <section class="forwho-section" id="para-quem-e" aria-label="Para quem é">
+        <div class="container">
+             <br>
+             
+            <h2 class="section-title forwho-title">Para quem é essa consultoria?</h2>
+            <div class="forwho-cards">
+                <div class="forwho-card">
+                    <h4 class="forwho-card-title">Ganhar Massa Muscular</h4>
+                    <p>Para mulheres que querem desenvolver glúteos, coxas e melhorar a estética corporal com estratégia e acompanhamento.</p>
+                </div>
+                <div class="forwho-card">
+                    <h4 class="forwho-card-title">Resultados de Verdade</h4>
+                    <p>Para quem está cansada de treinos genéricos, falta de evolução e quer um plano que realmente funcione para o corpo feminino.</p>
+                </div>
+                <div class="forwho-card">
+                    <h4 class="forwho-card-title">Acompanhamento Especializado</h4>
+                    <p>Para quem busca orientação de um treinador que trabalha exclusivamente com mulheres e entende suas necessidades.</p>
+                </div>
+                <div class="forwho-card">
+                    <h4 class="forwho-card-title">Treino com Ciência e Prática</h4>
+                    <p>Para quem quer um treino alinhado com ciência, experiência prática e adaptado à realidade da mulher moderna.</p>
+                </div>
+            </div>
+            <div class="forwho-diferenciais-modern">
+                <div class="forwho-bad-modern">
+                    <h3 class="forwho-bad-title">O que NÃO é:</h3>
+                    <ul>
+                        <li>Treinos prontos da internet</li>
+                        <li>Protocolos genéricos</li>
+                        <li>“Treino feminino” sem entender o corpo feminino</li>
+                    </ul>
+                </div>
+                <div class="forwho-good-modern">
+                    <h3 class="forwho-good-title">O que VOCÊ recebe:</h3>
+                    <ul>
+                        <li>Planejamento individual</li>
+                        <li>Foco em estética feminina</li>
+                        <li>Experiência real com centenas de mulheres</li>
+                        <li>Atendimento 100% feminino</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
 
-    
-    <footer id="rodape" class="rodape-prof">
-      <img class="perfil" src="img/1.0.1.png" width="60" alt="Logo SynCodx rodapé">
-      <div class="footer-divider divider-anim"></div>
-      <h1 class="footer-titulo">SynCodx Tech Solutions Ltda</h1>
-      <p class="footer-info">CNPJ: 00.000.000/0001-00 &nbsp;|&nbsp; contato@syncodx.com.br</p>
-      <p class="footer-copy">&copy; 2026 SynCodx Tech Solutions Ltda — Todos os direitos reservados</p>
+
+    <!--
+      Etapa 1.5: Sobre mim
+      Apresentação do treinador e sua experiência
+    -->
+    <section class="about-section" id="sobre" aria-label="Sobre mim">
+        <div class="container">
+            <h2 class="section-title">Sobre mim</h2>
+            <div class="about-content">
+                <p>Sou <strong>Thiago Bazillio</strong>, treinador especializado em hipertrofia e estética feminina.</p>
+                <p>Trabalho com treinamento desde 2011, sendo que desde 2020 atuo exclusivamente com mulheres, ajudando alunas a desenvolverem glúteos, pernas, definição e um corpo forte — sem extremismos e sem promessas milagrosas.</p>
+                <p>Toda a consultoria é baseada em ciência, experiência prática e individualidade feminina.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+      Etapa 1.6: Informações sobre simetria e resultados
+      Explica a importância de estratégia nos treinos
+    -->
+    <section class="info-section" id="info-simetria" aria-label="Simetria e resultados">
+        <div class="container">
+            <div class="info-simetria-note">
+                <p class="info-simetria-intro">Um dos motivos de você não evoluir nos seus treinos e não alcançar resultados absurdos está nas escolhas erradas de exercícios que talvez não sejam ideais para você no momento.<br>Isso pode te levar a alcançar um padrão corporal que você não deseja.</p>
+                <p class="info-simetria-highlight">Por outro lado minhas alunas estão conquistando físicos absurdos</p>
+            </div>
+            <div class="info-simetria-content">
+                <div class="info-simetria-image">
+                    <img src="img/S_info.jpeg" alt="Resultados simétricos">
+                </div>
+                <div class="info-simetria-text">
+                    <h3>Resultados simétricos e estratégicos</h3>
+                    <div class="info-simetria-warning">
+                        <p class="warning-title">Se você treina sem estratégia, não é só os resultados que demoram...</p>
+                        <ul class="warning-list">
+                            <li><span>▲</span> Pode estar perdendo massa magra ao invés de ganhar!</li>
+                            <li><span>▲</span> Pode estar sobrecarregando articulações sem necessidade.</li>
+                            <li><span>▲</span> Pode acabar com dores e sem ver mudanças reais no espelho.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+      Etapa 1.7: Como funciona a consultoria
+      Explica o processo de acompanhamento e diferenciais do serviço
+    -->
+    <section class="process-section" id="como-funciona" aria-label="Como funciona">
+        <div class="container">
+            <h2 class="section-title">Como funciona a consultoria</h2>
+            <p class="process-intro">Um acompanhamento pensado para mulheres que querem resultado com estratégia, não improviso.</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Treino personalizado</h3>
+                    <p>Seu treino é 100% individual, focado em seus objetivos, com foco em estética feminina e hipertrofia.<br>
+                    <strong>Prazo de entrega:</strong> O treino é enviado em até 4 dias após a contratação.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Acompanhamento técnico</h3>
+                    <p>Durante a execução dos treinos, você pode me enviar vídeos dos exercícios para:<br>
+                    • Correção de execução<br>
+                    • Ajustes técnicos<br>
+                    • Redução de risco de lesões<br>
+                    • Melhor aproveitamento do exercício<br>
+                    <em>(Nada de treinar no escuro ou repetir erro por meses.)</em></p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Troca de treino a cada 8 a 12 semanas</h3>
+                    <p>O planejamento é feito para gerar adaptação e resultado real. Nada de treino mensal pra retenção de aluno que não gera nenhuma adaptação muscular.<br>
+                    <strong>Recomendo a troca do treino a cada 8 a 12 semanas, respeitando:</strong><br>
+                    • Evolução da carga<br>
+                    • Aprendizado técnico<br>
+                    • Resposta individual do corpo feminino</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!--
+            Etapa 1.8: Diferenciais da consultoria
+            Lista os principais diferenciais do serviço
+        -->
+        <section class="diferenciais-section" id="diferenciais" aria-label="Diferenciais">
+            <div class="diferenciais-container">
+                <div class="diferenciais-box">
+                    <h3 class="diferenciais-title">Diferenciais da consultoria</h3>
+                    <ul class="diferenciais-list">
+                        <li>Atendimento 100% feminino</li>
+                        <li>Mais de 14 anos de experiência com musculação</li>
+                        <li>Foco em estética feminina real</li>
+                        <li>Correção técnica individual</li>
+                        <li>Planejamento pensado a médio e longo prazo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    <!--
+      Etapa 1.9: Planos de consultoria
+      Apresenta o plano disponível e benefícios
+    -->
+    <section class="skills-section" id="planos" aria-label="Planos de consultoria">
+        <div class="container">
+            <h2 class="section-title">Consultoria Online</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Plano Gold</h3>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">300</span>
+                        <span class="cents">,00</span>
+                    </div>
+                    <ul class="plan-features">
+                            <li>✔ Treino 100% personalizado</li>
+                            <li>✔ Foco em estética feminina</li>
+                            <li>✔ Correção ou análise de execução dos exercícios através de vídeos que me enviarem pelo WhatsApp</li>
+                            <li>✔ Ajustes pontuais no treino</li>
+                            <li>✔ Suporte para tirar dúvidas</li>
+                            <li><span class="bonus-destaque"><strong>Bônus especial:</strong><br>
+                            Você também recebe uma <strong>dieta já montada</strong>, pronta para te ajudar a <strong>emagrecer</strong> ou <strong>ganhar massa muscular</strong>.</span></li>
+                    </ul>
+                    <a href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=1&page=74445&isCheckout=true" target="_blank" class="plan-button">Contratar agora</a>
+                </div>
+            <div class="plans-grid">
+                <div class="plan-card featured destaque-mais-vendido">
+                    <div class="plan-badge">NÃO PERCA</div>
+                    <h3>Plano Platinum</h3>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">550</span>
+                        <span class="cents">,00</span>
+                    </div>
+                    <ul class="plan-features">
+                            <li>✔ Treino 100% personalizado</li>
+                            <li>✔ Foco em estética feminina</li>
+                            <li>✔ Correção ou análise de execução dos exercícios através de vídeos que me enviarem pelo WhatsApp</li>
+                            <li>✔ Ajustes pontuais no treino</li>
+                            <li>✔ Suporte para tirar dúvidas</li>
+                            <li>✔ Troca do treino entre 8-12 semanas</li>
+                            <li><span class="bonus-destaque"><strong>Bônus especial:</strong><br>
+                            Você também recebe uma <strong>dieta já montada</strong>, pronta para te ajudar a <strong>emagrecer</strong> ou <strong>ganhar massa muscular</strong>.</span></li>
+                    </ul>
+                    <a href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=1&page=115781&isCheckout=true" target="_blank" class="plan-button">Contratar agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+      Etapa 1.10: Resultados de alunas
+      Galeria de imagens de resultados reais
+    -->
+    <section class="portfolio-section" id="resultados" aria-label="Resultados de alunas">
+        <div class="container">
+            <h2 class="section-title">Resultados incríveis</h2>
+            <p class="results-intro">Veja algumas das transformações das minhas alunas. Cada resultado é fruto de dedicação, treino inteligente e acompanhamento personalizado!</p>
+            <div class="portfolio-grid">
+                <!-- Imagens de IMG_1 a IMG_15 -->
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_1.jpeg" alt="Transformação 1"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_2.jpeg" alt="Transformação 2"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_3.jpeg" alt="Transformação 3"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_4.jpeg" alt="Transformação 4"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_5.PNG" alt="Transformação 5"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_6.jpeg" alt="Transformação 6"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_7.jpeg" alt="Transformação 7"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_8.jpeg" alt="Transformação 8"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_9.jpeg" alt="Transformação 9"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_10.jpeg" alt="Transformação 10"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_11.jpeg" alt="Transformação 11"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_12.jpeg" alt="Transformação 12"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_13.jpeg" alt="Transformação 13"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_14.jpeg" alt="Transformação 14"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+                <div class="portfolio-item"><img class="result-img" src="img/IMG_15.jpeg" alt="Transformação 15"><div class="portfolio-overlay"><h3>Resultado</h3></div></div>
+            </div>
+            <!-- Modal para expandir imagem dos resultados -->
+            <div id="result-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
+                <span id="result-modal-close" style="position:absolute; top:32px; right:48px; font-size:2.5em; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
+                <img id="result-modal-img" src="" alt="Resultado expandido" style="max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 4px 32px rgba(209,59,123,0.18);">
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+      Etapa 1.11: Feedbacks de alunas
+      Carrossel de feedbacks reais, controlado por JS
+    -->
+    <section class="portfolio-section" id="feedbacks" aria-label="Feedbacks de alunas">
+        <div class="container">
+            <h2 class="section-title">Feedbacks de Alunas</h2>
+            <p class="results-intro">Veja os feedbacks reais das alunas sobre o acompanhamento!</p>
+            <div class="feedback-orbit" id="feedbackOrbit">
+                <button class="feedback-arrow" id="feedbackPrev" type="button" aria-label="Mostrar feedback anterior">
+                    <span>&larr;</span>
+                </button>
+                <div class="feedback-deck" id="feedbackDeck" aria-live="polite">
+                    <!-- Cartas preenchidas via JS -->
+                </div>
+                <button class="feedback-arrow" id="feedbackNext" type="button" aria-label="Mostrar próximo feedback">
+                    <span>&rarr;</span>
+                </button>
+            </div>
+            <!-- Modal para expandir imagem -->
+            <div id="feedback-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
+                <span id="feedback-modal-close" style="position:absolute; top:32px; right:48px; font-size:2.5em; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
+                <img id="feedback-modal-img" src="" alt="Feedback expandido" style="max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 4px 32px rgba(209,59,123,0.18);">
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+      Etapa 1.12: Dúvidas frequentes (FAQ)
+      Perguntas e respostas comuns sobre a consultoria
+    -->
+    <section class="faq-section" id="faq" aria-label="Dúvidas frequentes">
+        <div class="container">
+            <h2 class="section-title">Dúvidas frequentes</h2>
+            <div class="faq-grid">
+                <!-- Cada card é controlado por JS para abrir/fechar -->
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Pago todo mês?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>Não.</strong><br>
+                        O valor é fechado. Você só paga novamente quando for trocar o treino, o que recomendo entre 8 a 12 semanas, de acordo com sua evolução.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Em quanto tempo recebo meu treino?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>O treino é entregue em até 4 dias após a contratação.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Serve para iniciantes?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>Sim.</strong><br>
+                        O treino é montado de acordo com seu nível de experiência, respeitando seu histórico e sua evolução.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Tenho contato direto com você?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>Sim.</strong><br>
+                        O acompanhamento é feito diretamente comigo, sem equipe ou intermediários.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Posso enviar vídeos para correção?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>Sim.</strong><br>
+                        Você pode enviar quantos vídeos quiser para correção de execução e ajustes técnicos ao longo do período da consultoria.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Como recebo o treino?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Por um app, com vídeos dos exercícios, espaço para cargas e feedbacks.</p>
+                    </div>
+                </div>
+                <div class="faq-card" data-faq>
+                    <div class="faq-question">
+                        <h3>Preciso mandar fotos?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>É interessante para avaliar postura, mas não é obrigatório. Se não se sentir confortável, seguimos normalmente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+      Etapa 1.13: Rodapé (Footer)
+      Informações institucionais, navegação e contatos
+    -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="img/logo.png" width="100" alt="Thiago Bazillio" class="footer-logo">
+                    <!-- Botões de contato ao lado do logo -->
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/thiagobazillio/" target="_blank" class="footer-instagram" title="Siga no Instagram" aria-label="Instagram">
+                            <ion-icon name="logo-instagram" style="font-size:2.5em;color:#ff2e6e;"></ion-icon>
+                        </a>
+                        <a href="https://wa.me/5511979891379?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank" class="footer-whatsapp" title="Fale comigo no WhatsApp" aria-label="WhatsApp">
+                            <ion-icon name="logo-whatsapp" style="font-size:2.5em;color:#25d366;"></ion-icon>
+                        </a>
+                    </div>
+                    <p class="footer-tagline">Consultoria Online | Treinamento Feminino</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#inicio">Início</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#como-funciona">Como Funciona</a></li>
+                            <li><a href="#planos">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Conteúdo</h4>
+                        <ul>
+                            <li><a href="#resultados">Resultados</a></li>
+                            <li><a href="#feedbacks">Feedbacks</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#diferenciais">Diferenciais</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="mailto:prof_thiagobazilio@hotmail.com">prof_thiagobazilio@hotmail.com</a></li>
+                            <li><a href="https://wa.me/5511979891379" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://www.instagram.com/thiagobazillio/" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Thiago Bazillio - Treinador | Todos os direitos reservados</p>
+                <p class="footer-dev">Desenvolvido por <a href="https://www.instagram.com/luanoliveirags/" target="_blank">Luan Gs</a></p>
+            </div>
+        </div>
     </footer>
-    
-    <!-- FINAL DO RODA-PÉ -->
-    
-    <!-- Importação dos scripts centralizados -->
-    <script src="js/script-index.js"></script>
 
+
+        <!-- Botões flutuantes removidos, agora estão no rodapé -->
+
+
+    <!--
+      Etapa 1.15: Scripts finais
+      Carrega scripts JS principais e ícones
+    -->
+    <script src="js/script-index.js"></script>
+    <script src="js/carousel-feedback.js"></script>
+    <!-- Modal de imagem em tela cheia é controlado por JS -->
+    <div id="modal-imagem" style="display:none;position:fixed;z-index:99999;top:0;left:0;width:100vw;height:100vh;background:rgba(10,10,10,0.97);align-items:center;justify-content:center;transition:opacity 0.3s;pointer-events:auto;">
+        <span id="fechar-modal-imagem" style="position:absolute;top:30px;right:40px;font-size:3rem;color:#ff2e6e;cursor:pointer;font-family:sans-serif;z-index:20001;user-select:none;">&times;</span>
+        <button id="seta-esquerda-modal" style="position:absolute;left:30px;top:50%;transform:translateY(-50%);background:none;border:none;color:transparent;font-size:4rem;cursor:pointer;z-index:20001;user-select:none;">&#8592;</button>
+        <img id="imagem-modal-grande" src="" alt="Imagem expandida" style="max-width:90vw;max-height:85vh;border-radius:18px;box-shadow:0 0 40px #ff2e6e88,0 0 80px #000b;object-fit:contain;">
+        <button id="seta-direita-modal" style="position:absolute;right:30px;top:50%;transform:translateY(-50%);background:none;border:none;color:transparent;font-size:4rem;cursor:pointer;z-index:20001;user-select:none;">&#8594;</button>
+    </div>
+    <!-- Ícones do Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
